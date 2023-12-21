@@ -6,12 +6,13 @@ const {
 } = require("./productService");
 
 const newProduct = async (req, res) => {
-  const { name, description, image } = req.body;
+  const { name, description, image, category_id } = req.body;
 
   const product = {
     name: name,
     description: description,
     image: image,
+    category_id: category_id,
   };
 
   const newProduct = await newProductService(product);

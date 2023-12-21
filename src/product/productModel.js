@@ -13,6 +13,10 @@ const productSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  category_id: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = Product = mongoose.model("Product", productSchema);

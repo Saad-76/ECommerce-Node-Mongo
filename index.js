@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const userRoutes = require("./src/user/userRoutes");
-// const productRoutes = require("./src/product/productRoutes");
+const productRoutes = require("./src/product/productRoutes");
+const categoryRoutes = require("./src/category/categoryRoutes");
 
 const dotenv = require("dotenv");
 const connectDb = require("./src/config/db");
@@ -18,7 +19,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", userRoutes);
-// app.use("/api", productRoutes);
+app.use("/api", productRoutes);
+app.use("/api", categoryRoutes);
 
 app.listen(5001, () => {
   console.log("You are on port 5001");
