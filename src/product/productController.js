@@ -6,13 +6,28 @@ const {
 } = require("./productService");
 
 const newProduct = async (req, res) => {
-  const { name, description, image, category_id } = req.body;
+  const {
+    name,
+    description,
+    image,
+    category_id,
+    brand,
+    // rating,
+    // numOfReviews,
+    price,
+    countInStock,
+  } = req.body;
 
   const product = {
     name: name,
     description: description,
     image: image,
     category_id: category_id,
+    brand: brand,
+    // rating: rating,
+    // numOfReviews: numOfReviews,
+    price: price,
+    countInStock: countInStock,
   };
 
   const newProduct = await newProductService(product);
@@ -34,12 +49,28 @@ const productById = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   const { id } = req.params.id;
-  const { name, description, image } = req.body;
+  const {
+    name,
+    description,
+    image,
+    category_id,
+    brand,
+    // rating,
+    // numOfReviews,
+    price,
+    countInStock,
+  } = req.body;
 
   const product = {
     name,
     description,
     image,
+    category_id,
+    brand,
+    // rating,
+    // numOfReviews,
+    price,
+    countInStock,
   };
 
   const newProduct = await updateProductService(id, product);

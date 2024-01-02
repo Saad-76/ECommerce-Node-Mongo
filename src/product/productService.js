@@ -79,6 +79,30 @@ const updateProductService = async (id, newProduct) => {
       product.image =
         newProduct.image !== "" ? newProduct.image : product.image;
 
+      product.category_id =
+        newProduct.category_id !== ""
+          ? newProduct.category_id
+          : product.category_id;
+
+      product.brand =
+        newProduct.brand !== "" ? newProduct.brand : product.brand;
+
+      // product.rating =
+      //   newProduct.rating !== "" ? newProduct.rating : product.rating;
+
+      // product.numOfReviews =
+      //   newProduct.numOfReviews !== ""
+      //     ? newProduct.numOfReviews
+      //     : product.numOfReviews;
+
+      product.price =
+        newProduct.price !== "" ? newProduct.price : product.price;
+
+      product.countInStock =
+        newProduct.countInStock !== ""
+          ? newProduct.countInStock
+          : product.countInStock;
+
       const updatedProduct = await product.save();
 
       const response = {
@@ -86,6 +110,12 @@ const updateProductService = async (id, newProduct) => {
         name: updatedProduct.name,
         description: updatedProduct.description,
         image: updatedProduct.image,
+        category_id: updatedProduct.category_id,
+        brand: updatedProduct.brand,
+        // rating: updatedProduct.rating,
+        // numOfReviews: updatedProduct.numOfReviews,
+        price: updatedProduct.price,
+        countInStock: updatedProduct.countInStock,
       };
 
       return {
